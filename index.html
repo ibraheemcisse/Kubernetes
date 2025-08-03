@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibrahim Cisse - Technical Writer Portfolio</title>
-    <meta name="description" content="Ibrahim Cisse - Technical Writer specializing in Kubernetes, Cloud Security, DevOps, and Cloud-Native technologies. 96+ published articles on Medium and AWSTip.">
-    <meta name="keywords" content="technical writer, kubernetes, devops, cloud security, aws eks, google gke, keda, service mesh, gitops, ibrahim cisse">
-    <meta name="author" content="Ibrahim Cisse">
-    <meta property="og:title" content="Ibrahim Cisse - Technical Writer Portfolio">
-    <meta property="og:description" content="Specialized technical writer with 96+ articles on Kubernetes and Cloud-Native technologies">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <title>Ibrahim Cisse</title>
     <style>
         * {
             margin: 0;
@@ -19,50 +11,12 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(45deg, #667eea, #764ba2);
-            --glass-bg: rgba(255, 255, 255, 0.95);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-primary: #333;
-            --text-secondary: #666;
-            --accent-color: #667eea;
-            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--primary-gradient);
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Animated background particles */
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .container {
@@ -71,168 +25,207 @@
             padding: 20px;
         }
 
-        /* Enhanced header with typing animation */
         .header {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow-light);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border: 1px solid var(--glass-border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            animation: rotate 10s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            to { transform: rotate(360deg); }
         }
 
         .header h1 {
-            font-size: 3.5rem;
-            background: var(--secondary-gradient);
+            font-size: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: -1px;
         }
 
-        .typing-text {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #666;
             margin-bottom: 20px;
-            font-style: italic;
-            overflow: hidden;
-            border-right: 2px solid var(--accent-color);
-            white-space: nowrap;
-            animation: typing 4s steps(40) infinite;
-        }
-
-        @keyframes typing {
-            0%, 90%, 100% { width: 0; }
-            30%, 60% { width: 100%; }
         }
 
         .stats {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 40px;
             margin-top: 30px;
         }
 
         .stat {
             text-align: center;
-            position: relative;
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--secondary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 5px;
         }
 
-        /* Enhanced profile section */
-        .profile-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
-            padding: 40px;
+        .controls {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-section {
             display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             align-items: center;
-            gap: 40px;
-            border: 1px solid var(--glass-border);
-            position: relative;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid transparent;
-            background: var(--secondary-gradient);
-            padding: 4px;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05) rotate(5deg);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .profile-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            position: relative;
-        }
-
-        .profile-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary-gradient);
-            border-radius: 2px;
-        }
-
-        .profile-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
             margin-bottom: 15px;
         }
 
-        /* Enhanced expertise section with hover effects */
+        .filter-section label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .search-box, .category-filter {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .search-box:focus, .category-filter:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .category-filter {
+            min-width: 150px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .article-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            background: transparent;
+        }
+
+        .article-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .article-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
         .expertise-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .expertise-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: var(--text-primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
             text-align: center;
-            position: relative;
         }
 
         .expertise-tags {
@@ -243,370 +236,22 @@
         }
 
         .expertise-tag {
-            background: var(--secondary-gradient);
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
-        .expertise-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition);
-        }
-
-        .expertise-tag:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .expertise-tag:hover::before {
-            left: 100%;
-        }
-
-        /* Enhanced controls section */
-        .controls {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--glass-border);
-        }
-
-        .filter-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .filter-section label {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .search-box, .category-filter {
-            padding: 14px 18px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 14px;
-            transition: var(--transition);
-            background: white;
-            font-family: inherit;
-        }
-
-        .search-box:focus, .category-filter:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-            transform: translateY(-1px);
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .category-filter {
-            min-width: 170px;
-        }
-
-        /* Enhanced article cards */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .article-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
-            padding: 35px;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            border: 1px solid var(--glass-border);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--secondary-gradient);
-        }
-
-        .article-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.03) 0%, transparent 70%);
-            transition: var(--transition);
-            transform: scale(0);
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .article-card:hover::after {
-            transform: scale(1);
-        }
-
-        .article-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-        }
-
-        .article-category {
-            display: inline-block;
-            background: var(--secondary-gradient);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .article-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            padding: 12px 24px;
-            border: 2px solid var(--accent-color);
-            border-radius: 12px;
-            background: transparent;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .article-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-color);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .article-link:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .article-link:hover::before {
-            left: 0;
-        }
-
-        .article-link::after {
-            content: '→';
-            margin-left: 10px;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .article-link:hover::after {
-            transform: translateX(5px);
-        }
-
-        /* Enhanced contact section */
-        .contact-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
-            padding: 50px 40px;
-            margin-top: 30px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            border: 1px solid var(--glass-border);
-        }
-
-        .contact-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--text-primary);
-            background: var(--secondary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 18px 30px;
-            border: 2px solid var(--accent-color);
-            border-radius: 15px;
-            transition: var(--transition);
-            background: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-color);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .contact-link:hover {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-        }
-
-        .contact-link:hover::before {
-            left: 0;
-        }
-
-        .contact-icon {
-            font-size: 1.3rem;
-            transition: var(--transition);
-        }
-
-        .contact-link:hover .contact-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        /* Enhanced footer */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 50px;
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-        }
-
-        .footer p {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer a:hover {
-            color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 80px 20px;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            background: var(--glass-bg);
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(15px);
-        }
-
-        /* Scroll to top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--secondary-gradient);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(100px);
-            z-index: 1000;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Responsive design */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .typing-text {
-                font-size: 1.1rem;
+                font-size: 2rem;
             }
 
             .stats {
                 flex-direction: column;
-                gap: 30px;
+                gap: 20px;
             }
 
             .articles-grid {
@@ -621,104 +266,47 @@
             .search-box, .category-filter {
                 width: 100%;
             }
-
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-link {
-                width: 250px;
-                justify-content: center;
-            }
-
-            .scroll-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Loading animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
-    <div class="background-animation" id="backgroundAnimation"></div>
-
     <div class="container">
-        <header class="header fade-in">
-            <h1>Ibrahim Cisse</h1>
-            <p class="typing-text">"I Write What Engineers Think And What Users Need to Know"</p>
+        <header class="header">
+            <h1>Technical Writer Portfolio</h1>
+            <p class="subtitle">Welcome to my Technical Writer Portfolio, I Write What Engineers Think And What Users and Engineers Need to Know</p>
             <div class="stats">
                 <div class="stat">
-                    <div class="stat-number" id="articleCount">96</div>
+                    <div class="stat-number" id="articleCount">41</div>
                     <div class="stat-label">Articles Published</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">5</div>
+                    <div class="stat-number">3</div>
                     <div class="stat-label">Platforms</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">15+</div>
+                    <div class="stat-number">8+</div>
                     <div class="stat-label">Topics Covered</div>
                 </div>
             </div>
         </header>
 
-        <section class="profile-section fade-in">
-            <img src="https://via.placeholder.com/180/667eea/ffffff?text=IC" alt="Ibrahim Cisse Professional Photo" class="profile-image">
-            <div class="profile-content">
-                <h2>About Me</h2>
-                <p>Technical writer specializing in cloud-native technologies, AWS architecture, and infrastructure automation. I bridge the gap between complex engineering concepts and clear, actionable documentation that developers, DevOps teams, and system administrators can actually use.</p>
-                <p>With 96+ published articles across Medium, AWSTip, and AWS in Plain English, I focus on practical guides, architectural deep-dives, hands-on tutorials, and comprehensive technical analysis spanning Kubernetes, AWS services, Terraform, Linux administration, and modern DevOps practices.</p>
-                <p><strong>Mission:</strong> Making complex cloud-native technologies accessible through clear, practical documentation.</p>
-            </div>
-        </section>
-
-        <section class="expertise-section fade-in">
-            <h2>Subject Areas</h2>
+        <section class="expertise-section">
+            <h2>Subject Area</h2>
             <div class="expertise-tags">
                 <span class="expertise-tag">Kubernetes</span>
-                <span class="expertise-tag">AWS Cloud Architecture</span>
-                <span class="expertise-tag">Terraform/IaC</span>
-                <span class="expertise-tag">Linux System Administration</span>
-                <span class="expertise-tag">Serverless Computing</span>
-                <span class="expertise-tag">DevOps & Automation</span>
+                <span class="expertise-tag">Container Orchestration</span>
                 <span class="expertise-tag">Cloud Security</span>
-                <span class="expertise-tag">API Development</span>
-                <span class="expertise-tag">Network Management</span>
-                <span class="expertise-tag">Multi-Tenant SaaS</span>
-                <span class="expertise-tag">Monitoring & Observability</span>
-                <span class="expertise-tag">Community & Events</span>
+                <span class="expertise-tag">DevOps</span>
+                <span class="expertise-tag">Autoscaling (KEDA)</span>
+                <span class="expertise-tag">Service Mesh</span>
+                <span class="expertise-tag">AWS EKS</span>
+                <span class="expertise-tag">Google GKE</span>
+                <span class="expertise-tag">GitOps</span>
+                <span class="expertise-tag">Infrastructure as Code</span>
             </div>
         </section>
 
-        <div class="controls fade-in">
+        <div class="controls">
             <div class="filter-section">
                 <label for="searchInput">Search:</label>
                 <input type="text" id="searchInput" class="search-box" placeholder="Search articles by title or topic...">
@@ -726,11 +314,6 @@
                 <label for="categoryFilter">Category:</label>
                 <select id="categoryFilter" class="category-filter">
                     <option value="all">All Categories</option>
-                    <option value="aws">AWS</option>
-                    <option value="terraform">Terraform/IaC</option>
-                    <option value="linux">Linux/System Admin</option>
-                    <option value="ai">AI/ML Applications</option>
-                    <option value="serverless">Serverless</option>
                     <option value="security">Security</option>
                     <option value="autoscaling">Autoscaling</option>
                     <option value="cka">CKA Certification</option>
@@ -739,10 +322,6 @@
                     <option value="troubleshooting">Troubleshooting</option>
                     <option value="architecture">Architecture</option>
                     <option value="service-mesh">Service Mesh</option>
-                    <option value="api">API Development</option>
-                    <option value="networking">Networking</option>
-                    <option value="monitoring">Monitoring & Observability</option>
-                    <option value="community">Community & Events</option>
                 </select>
             </div>
         </div>
@@ -755,221 +334,10 @@
             <h3>No articles found</h3>
             <p>Try adjusting your search criteria or browse all articles.</p>
         </div>
-
-        <section class="contact-section fade-in">
-            <h2>Let's Connect</h2>
-            <div class="contact-links">
-                <a href="mailto:ibrahim.cisse@email.com" class="contact-link">
-                    <span class="contact-icon">✉️</span>
-                    Email Me
-                </a>
-                <a href="https://linkedin.com/in/ibrahim-cisse" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-icon">💼</span>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/ibrahim-cisse" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-icon">👨‍💻</span>
-                    GitHub
-                </a>
-                <a href="https://medium.com/@info_37956" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span class="contact-icon">📝</span>
-                    Medium
-                </a>
-            </div>
-        </section>
-
-        <footer class="footer fade-in">
-            <p>&copy; 2025 Ibrahim Cisse. All rights reserved.</p>
-            <p>Built with passion for technical communication | <a href="https://github.com/your-username/portfolio">View Source</a></p>
-        </footer>
     </div>
-
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script>
         const articles = [
-            // AWS & Cloud Architecture Articles
-            {
-                title: "Introducing Nomad AI Concierge: Your AI-Powered Travel Planner & Visa Advisor on AWS Party Rock",
-                url: "https://medium.com/aws-in-plain-english/introducing-nomad-ai-concierge-your-ai-powered-travel-planner-visa-advisor-on-aws-party-rock-cb4c000230ec",
-                category: "ai"
-            },
-            {
-                title: "Testing AI-Powered Property Management: From Payment Analysis to Tenant Risk Evaluation",
-                url: "https://medium.com/aws-in-plain-english/testing-ai-powered-property-management-from-payment-analysis-to-tenant-risk-evaluation-with-a-0e09c8873cd8",
-                category: "ai"
-            },
-            {
-                title: "Building a Serverless Multi-Tenant SaaS Application: A Complete Guide Part 1",
-                url: "https://medium.com/aws-in-plain-english/building-a-serverless-multi-tenant-saas-application-a-complete-guide-part-1-35f08da4051b",
-                category: "serverless"
-            },
-            {
-                title: "The Complete API Masterclass: From Fundamentals to AWS API Gateway",
-                url: "https://medium.com/aws-tip/the-complete-api-masterclass-from-fundamentals-to-aws-api-gateway-34667d0a7b78",
-                category: "api"
-            },
-            {
-                title: "Supercharge Your AWS Development: How to Access AWS Console Features Directly from VS Code",
-                url: "https://aws.plainenglish.io/supercharge-your-aws-development-how-to-access-aws-console-features-directly-from-vs-code-cec0e8379802",
-                category: "aws"
-            },
-            {
-                title: "Designing a Global, Scalable HIPAA-Compliant Healthcare App on AWS",
-                url: "https://awstip.com/designing-a-global-scalable-hipaa-compliant-healthcare-app-on-aws-2cb766a1f192",
-                category: "aws"
-            },
-            {
-                title: "Using Lambda Functions in S3 Programmatically",
-                url: "https://medium.com/@info_37956/using-lambda-functions-in-s3-programmatically-82ca76dc11cb",
-                category: "serverless"
-            },
-            {
-                title: "Implementing a Scalable Web Architecture for a Fictional Company on AWS",
-                url: "https://medium.com/@info_37956/implementing-a-scalable-web-architecture-for-a-fictional-company-on-aws-536d8eb895e3",
-                category: "aws"
-            },
-            {
-                title: "Simplifying Static Web Hosting with Amazon S3: A Hands-On Guide",
-                url: "https://medium.com/@info_37956/simplifying-static-web-hosting-with-amazon-s3-a-hands-on-guide-fbd873b6acdd",
-                category: "aws"
-            },
-            {
-                title: "Deployment of an Amazon RDS Multi-AZ and Read Replica in AWS",
-                url: "https://medium.com/@info_37956/deployment-of-an-amazon-rds-multi-az-and-read-replica-in-aws-b1c8f3a76c79",
-                category: "aws"
-            },
-            {
-                title: "Utilize AWS VPC Flow Logs to Monitor Network Traffic",
-                url: "https://medium.com/@info_37956/utilize-aws-vpc-flow-logs-to-monitor-network-traffic-dabec829faa4",
-                category: "aws"
-            },
-            {
-                title: "CloudFormation For a Retail Company: Lab",
-                url: "https://medium.com/@info_37956/cloudformation-for-a-retail-company-lab-ca1416c1f548",
-                category: "aws"
-            },
-            {
-                title: "Optimizing E-commerce Performance with CloudWatch Alarms and Auto Scaling Using SQS",
-                url: "https://medium.com/@info_37956/optimizing-e-commerce-performance-with-cloudwatch-alarms-and-auto-scaling-using-sqs-516bf2e672fe",
-                category: "aws"
-            },
-            
-            // Terraform & Infrastructure as Code Articles
-            {
-                title: "How to Simulate AWS Networking with Terraform and LocalStack",
-                url: "https://medium.com/@info_37956/how-to-simulate-aws-networking-with-terraform-and-localstack-39fbc46c3678",
-                category: "terraform"
-            },
-            {
-                title: "Terraform: A Comprehensive Guide to Essential Components",
-                url: "https://medium.com/@info_37956/terraform-a-comprehensive-guide-to-essential-components-3a14898fa795",
-                category: "terraform"
-            },
-            {
-                title: "Streamlining Terraform Workflows: Best Practices for State Management and Automation",
-                url: "https://medium.com/@info_37956/streamlining-terraform-workflows-best-practices-for-state-management-and-automation-169a0796867b",
-                category: "terraform"
-            },
-            {
-                title: "Understanding Terraform: A Practical Workflow Guide",
-                url: "https://medium.com/@info_37956/understanding-terraform-a-practical-workflow-guide-e57f836a5fb1",
-                category: "terraform"
-            },
-            {
-                title: "Complete Setup Guide for LocalStack with Terraform",
-                url: "https://medium.com/@info_37956/complete-setup-guide-for-localstack-with-terraform-4fbe7de5488f",
-                category: "terraform"
-            },
-            {
-                title: "Terraform State",
-                url: "https://medium.com/@info_37956/terraform-state-0d5ee9fe01b4",
-                category: "terraform"
-            },
-            {
-                title: "Terraform Essentials: The Building Blocks of Infrastructure Orchestration",
-                url: "https://medium.com/@info_37956/terraform-essentials-the-building-blocks-of-infrastructure-orchestration-b6cb787227d0",
-                category: "terraform"
-            },
-            {
-                title: "Everything as Code: A Comprehensive Guide to Modern DevOps",
-                url: "https://medium.com/@info_37956/everything-as-code-a-comprehensive-guide-to-modern-devops-3da66688b517",
-                category: "terraform"
-            },
-            {
-                title: "Automating AWS Infrastructure with Terraform using Dynamic Blocks",
-                url: "https://medium.com/@info_37956/automating-aws-infrastructure-with-terraform-using-dynamic-blocks-8f798d28f28c",
-                category: "terraform"
-            },
-            
-            // Linux & System Administration Articles
-            {
-                title: "Firewall: Network Traffic Management",
-                url: "https://medium.com/@info_37956/firewall-traffic-management-e0616bc0b344",
-                category: "networking"
-            },
-            {
-                title: "A Comprehensive Guide to Configuring Firewall Rules on CentOS",
-                url: "https://medium.com/@info_37956/a-comprehensive-guide-to-configuring-firewall-rules-on-centos-92b25138e9b5",
-                category: "linux"
-            },
-            {
-                title: "Comprehensive Linux Kernel Guide: Architecture, Boot Process & System Administration",
-                url: "https://medium.com/@info_37956/comprehensive-linux-kernel-guide-architecture-boot-process-system-administration-73187091c956",
-                category: "linux"
-            },
-            {
-                title: "How I Set Up a Kubernetes Home Lab on Ubuntu WSL. Preparing for Advanced Monitoring and Observability",
-                url: "https://medium.com/@info_37956/how-i-set-up-a-kubernetes-home-lab-on-ubuntu-wsl-53b8866121e9",
-                category: "deployment"
-            },
-            {
-                title: "Vim Cheat Sheet for CKA (Ubuntu 24.04)",
-                url: "https://medium.com/@info_37956/vim-cheat-sheet-for-cka-ubuntu-24-04-d32428f920a5",
-                category: "linux"
-            },
-            {
-                title: "Setting Up Python 3.7 Development Environment on CentOS 7 Server",
-                url: "https://medium.com/@info_37956/setting-up-python-3-7-development-environment-on-centos-7-server-c488807049bd",
-                category: "linux"
-            },
-            {
-                title: "Managing Users and Groups in Linux: A Step-by-Step Guide",
-                url: "https://medium.com/@info_37956/managing-users-and-groups-in-linux-a-step-by-step-guide-869e229fb705",
-                category: "linux"
-            },
-            {
-                title: "Different Roles for Users and Permissions in Linux: A Step-by-Step Guide",
-                url: "https://medium.com/@info_37956/managing-users-and-permissions-in-linux-a-step-by-step-guide-0c7f620a9b69",
-                category: "linux"
-            },
-            {
-                title: "Implementing Network Time Protocol (NTP): A Comprehensive Technical Guide",
-                url: "https://medium.com/@info_37956/implementing-network-time-protocol-ntp-a-comprehensive-technical-guide-18015c3a1280",
-                category: "networking"
-            },
-            {
-                title: "Implementing Static IP Configuration Using nmcli on Linux",
-                url: "https://medium.com/@info_37956/implementing-static-ip-configuration-using-nmcli-on-linux-767fb8c9f8b0",
-                category: "networking"
-            },
-            {
-                title: "Implementing Network Teaming on a Linux Server",
-                url: "https://medium.com/@info_37956/implementing-network-teaming-on-a-linux-server-56f30c18646a",
-                category: "networking"
-            },
-            {
-                title: "Configuring DNS for Local Testing: A Technical Guide",
-                url: "https://medium.com/@info_37956/configuring-dns-for-local-testing-a-technical-guide-48d3758925a8",
-                category: "networking"
-            },
-            {
-                title: "DNS: Name Server Hands-on Lab",
-                url: "https://medium.com/@info_37956/dns-name-server-hands-on-lab-ac23497af84a",
-                category: "networking"
-            },
-            
-            // Kubernetes Articles
             {
                 title: "Comprehensive Guide: Deploying a Web App on Minikube with Port Forwarding and Ingress",
                 url: "https://medium.com/@info_37956/comprehensive-guide-deploying-a-web-app-on-minikube-with-port-forwarding-and-ingress-0d9361a27dc2",
@@ -1169,54 +537,79 @@
                 title: "GKE: Autopilot vs. Standard Mode",
                 url: "https://medium.com/@info_37956/gke-autopilot-vs-standard-mode-e8136263072b",
                 category: "architecture"
-            },
-            
-            // Monitoring & Observability Articles
-            {
-                title: "End-to-End Monitoring Setup: Prometheus, Grafana, and PagerDuty",
-                url: "https://medium.com/devops-dev/end-to-end-monitoring-setup-prometheus-grafana-and-pagerduty-0234ba8542ea",
-                category: "monitoring"
-            },
-            {
-                title: "A Complete Guide to Prometheus: Monitoring Your Infrastructure Like a Pro",
-                url: "https://medium.com/@info_37956/a-complete-guide-to-prometheus-monitoring-your-infrastructure-like-a-pro-8684cdadc5a2",
-                category: "monitoring"
-            },
-            {
-                title: "Securing and Configuring Node Exporter for Prometheus Monitoring",
-                url: "https://medium.com/@info_37956/securing-and-configuring-node-exporter-for-prometheus-monitoring-61f1457c425a",
-                category: "monitoring"
-            },
-            {
-                title: "Understanding Prometheus Metrics: A Comprehensive Guide for SREs and DevOps Engineers",
-                url: "https://blog.devops.dev/understanding-prometheus-metrics-a-comprehensive-guide-for-sres-and-devops-engineers-6a424211ce71",
-                category: "monitoring"
-            },
-            {
-                title: "Understanding OpenTelemetry, Prometheus, and Grafana: A Complete Guide",
-                url: "https://medium.com/@info_37956/understanding-opentelemetry-prometheus-and-grafana-a-complete-guide-19cb1b93a8e4",
-                category: "monitoring"
-            },
-            {
-                title: "OpenTelemetry in Action: Understanding the Architecture of a Polyglot Application",
-                url: "https://blog.devops.dev/opentelemetry-in-action-understanding-the-architecture-of-a-polygot-application-c3e32a3bee7c",
-                category: "monitoring"
-            },
-            {
-                title: "OpenTelemetry: Solving Modern Application Monitoring Challenges",
-                url: "https://medium.com/@info_37956/opentelemetry-solving-modern-application-monitoring-challenges-985eeffd2681",
-                category: "monitoring"
-            },
-            
-            // Community Events & Contributions Articles
-            {
-                title: "From Zero to CNCF Recognition: How One Cloud Native Meetup Changed My DevOps Career Trajectory",
-                url: "https://medium.com/@info_37956/from-zero-to-cncf-recognition-how-one-cloud-native-meetup-changed-my-devops-career-trajectory-424ed055d908",
-                category: "community"
-            },
-            {
-                title: "Reflections from the AWS User group Malaysia AI/ML Community Event",
-                url: "https://medium.com/@info_37956/reflections-from-the-aws-ai-ml-community-event-605b2dda425c",
-                category: "community"
             }
         ];
+
+        function getCategoryDisplayName(category) {
+            const categoryNames = {
+                'security': 'Security',
+                'autoscaling': 'Autoscaling',
+                'cka': 'CKA Certification',
+                'eks': 'AWS EKS',
+                'deployment': 'Deployment',
+                'troubleshooting': 'Troubleshooting',
+                'architecture': 'Architecture',
+                'service-mesh': 'Service Mesh'
+            };
+            return categoryNames[category] || category.replace('-', ' ').toUpperCase();
+        }
+
+        function renderArticles(articlesToRender) {
+            const grid = document.getElementById('articlesGrid');
+            const noResults = document.getElementById('noResults');
+            
+            console.log('Rendering articles:', articlesToRender.length); // Debug log
+            
+            if (articlesToRender.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            
+            grid.innerHTML = articlesToRender.map(article => `
+                <article class="article-card">
+                    <div class="article-category">${getCategoryDisplayName(article.category)}</div>
+                    <h3 class="article-title">${article.title}</h3>
+                    <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-link">
+                        Read Article
+                    </a>
+                </article>
+            `).join('');
+        }
+
+        function filterArticles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            
+            console.log('Filter by category:', categoryFilter); // Debug log
+            console.log('Search term:', searchTerm); // Debug log
+            
+            const filtered = articles.filter(article => {
+                const matchesSearch = article.title.toLowerCase().includes(searchTerm);
+                const matchesCategory = categoryFilter === 'all' || article.category === categoryFilter;
+                
+                console.log(`Article: ${article.title.substring(0, 30)}..., Category: ${article.category}, Matches: ${matchesCategory}`); // Debug log
+                
+                return matchesSearch && matchesCategory;
+            });
+            
+            console.log('Filtered results:', filtered.length); // Debug log
+            
+            renderArticles(filtered);
+            
+            // Update article count
+            document.getElementById('articleCount').textContent = filtered.length;
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterArticles);
+        document.getElementById('categoryFilter').addEventListener('change', filterArticles);
+
+        // Initial render
+        renderArticles(articles);
+    </script>
+</body>
+</html>
