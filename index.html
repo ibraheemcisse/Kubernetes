@@ -1,616 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibrahim Cisse</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibrahim Cisse - Technical Writer Portfolio</title>
+  <meta name="description" content="Ibrahim Cisse - Technical Writer specializing in Kubernetes, Cloud Security, DevOps, and Cloud-Native technologies. 96+ published articles on Medium and AWSTip.">
+  <meta name="keywords" content="technical writer, kubernetes, devops, cloud security, aws eks, google gke, keda, service mesh, gitops, ibrahim cisse">
+  <meta name="author" content="Ibrahim Cisse">
+  <meta property="og:title" content="Ibrahim Cisse - Technical Writer Portfolio">
+  <meta property="og:description" content="Specialized technical writer with 96+ articles on Kubernetes and Cloud-Native technologies">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .header {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
 
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .header h1 {
+      font-size: 3rem;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .header h1 {
-            font-size: 3rem;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+    .typing-text {
+      font-style: italic;
+      color: #666;
+      font-size: 1.2rem;
+      border-right: 2px solid #667eea;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40) infinite;
+    }
 
-        .header .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
+    @keyframes typing {
+      0%, 90%, 100% { width: 0; }
+      30%, 60% { width: 100%; }
+    }
 
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-        }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
 
-        .stat {
-            text-align: center;
-        }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #667eea;
+    }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+      text-transform: uppercase;
+    }
 
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .profile-section {
+      display: flex;
+      gap: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      align-items: center;
+    }
 
-        .controls {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      padding: 4px;
+    }
 
-        .filter-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+    .profile-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .filter-section label {
-            font-weight: 600;
-            color: #333;
-        }
+    .expertise-section {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-        .search-box, .category-filter {
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            background: white;
-        }
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
 
-        .search-box:focus, .category-filter:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
+    .expertise-tag {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+    }
 
-        .search-box {
-            flex: 1;
-            min-width: 250px;
-        }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 25px;
+    }
 
-        .category-filter {
-            min-width: 150px;
-        }
+    .article-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
-        }
+    .article-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-        .article-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
+    .article-category {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
 
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-        }
+    .article-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 2px solid #667eea;
+      color: #667eea;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
 
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
+    .article-link:hover {
+      background: #667eea;
+      color: white;
+    }
 
-        .article-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #333;
-            line-height: 1.4;
-        }
+    @media (max-width: 768px) {
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
 
-        .article-category {
-            display: inline-block;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .article-link {
-            display: inline-flex;
-            align-items: center;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 10px 20px;
-            border: 2px solid #667eea;
-            border-radius: 10px;
-            background: transparent;
-        }
-
-        .article-link:hover {
-            background: #667eea;
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .article-link::after {
-            content: '→';
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .article-link:hover::after {
-            transform: translateX(3px);
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .expertise-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .expertise-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-        }
-
-        .expertise-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .expertise-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .filter-section {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .search-box, .category-filter {
-                width: 100%;
-            }
-        }
-    </style>
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Technical Writer Portfolio</h1>
-            <p class="subtitle">Welcome to my Technical Writer Portfolio, I Write What Engineers Think And What Users and Engineers Need to Know</p>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number" id="articleCount">41</div>
-                    <div class="stat-label">Articles Published</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Platforms</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Topics Covered</div>
-                </div>
-            </div>
-        </header>
-
-        <section class="expertise-section">
-            <h2>Subject Area</h2>
-            <div class="expertise-tags">
-                <span class="expertise-tag">Kubernetes</span>
-                <span class="expertise-tag">Container Orchestration</span>
-                <span class="expertise-tag">Cloud Security</span>
-                <span class="expertise-tag">DevOps</span>
-                <span class="expertise-tag">Autoscaling (KEDA)</span>
-                <span class="expertise-tag">Service Mesh</span>
-                <span class="expertise-tag">AWS EKS</span>
-                <span class="expertise-tag">Google GKE</span>
-                <span class="expertise-tag">GitOps</span>
-                <span class="expertise-tag">Infrastructure as Code</span>
-            </div>
-        </section>
-
-        <div class="controls">
-            <div class="filter-section">
-                <label for="searchInput">Search:</label>
-                <input type="text" id="searchInput" class="search-box" placeholder="Search articles by title or topic...">
-                
-                <label for="categoryFilter">Category:</label>
-                <select id="categoryFilter" class="category-filter">
-                    <option value="all">All Categories</option>
-                    <option value="security">Security</option>
-                    <option value="autoscaling">Autoscaling</option>
-                    <option value="cka">CKA Certification</option>
-                    <option value="eks">AWS EKS</option>
-                    <option value="deployment">Deployment</option>
-                    <option value="troubleshooting">Troubleshooting</option>
-                    <option value="architecture">Architecture</option>
-                    <option value="service-mesh">Service Mesh</option>
-                </select>
-            </div>
+  <div class="container">
+    <header class="header">
+      <h1>Ibrahim Cisse</h1>
+      <p class="typing-text">"I Write What Engineers Think And What Users Need to Know"</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">96</div>
+          <div class="stat-label">Articles Published</div>
         </div>
-
-        <main class="articles-grid" id="articlesGrid">
-            <!-- Articles will be populated by JavaScript -->
-        </main>
-
-        <div class="no-results" id="noResults" style="display: none;">
-            <h3>No articles found</h3>
-            <p>Try adjusting your search criteria or browse all articles.</p>
+        <div class="stat">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Platforms</div>
         </div>
-    </div>
+        <div class="stat">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Topics Covered</div>
+        </div>
+      </div>
+    </header>
 
-    <script>
-        const articles = [
-            {
-                title: "Comprehensive Guide: Deploying a Web App on Minikube with Port Forwarding and Ingress",
-                url: "https://medium.com/@info_37956/comprehensive-guide-deploying-a-web-app-on-minikube-with-port-forwarding-and-ingress-0d9361a27dc2",
-                category: "deployment"
-            },
-            {
-                title: "Minikube: Setting Up Metrics Server, RBAC, and Kubectl Context",
-                url: "https://medium.com/@info_37956/minikube-setting-up-metrics-server-rbac-and-kubectl-context-2ea89ec6d07f",
-                category: "deployment"
-            },
-            {
-                title: "Kubernetes Architecture: A brief walkthrough",
-                url: "https://medium.com/@info_37956/kubernetes-architecture-a-brief-walkthrough-1c95ce4975a7",
-                category: "architecture"
-            },
-            {
-                title: "Setting Up and Troubleshooting HPA and VPA in Kubernetes",
-                url: "https://medium.com/@info_37956/setting-up-and-troubleshooting-hpa-and-vpa-in-kubernetes-593aac3ddb9f",
-                category: "autoscaling"
-            },
-            {
-                title: "10 Things to Consider Before Choosing an Ingress Controller for Kubernetes",
-                url: "https://medium.com/@info_37956/10-things-to-consider-before-choosing-an-ingress-controller-for-kubernetes-74ff08a64369",
-                category: "architecture"
-            },
-            {
-                title: "Journey of an Application through Kubernetes",
-                url: "https://medium.com/@info_37956/journey-of-an-application-through-kubernetes-f1cab19ce8a5",
-                category: "architecture"
-            },
-            {
-                title: "In-Depth Comparative Analysis: Horizontal Pod Autoscaler (HPA) vs. Kubernetes Event-driven Autoscaler (KEDA)",
-                url: "https://medium.com/@info_37956/in-depth-comparative-analysis-horizontal-pod-autoscaler-hpa-vs-d59c1ed5f5d6",
-                category: "autoscaling"
-            },
-            {
-                title: "My Journey to Implementing KEDA and Auto-Scaling in Kubernetes",
-                url: "https://awstip.com/my-journey-to-implementing-keda-and-auto-scaling-in-kubernetes-aa137efb5af5",
-                category: "autoscaling"
-            },
-            {
-                title: "Securing Kubernetes : A Practical Guide to Network Policies",
-                url: "https://medium.com/@info_37956/securing-kubernetes-a-practical-guide-to-network-policies-5bf9f547bf42",
-                category: "security"
-            },
-            {
-                title: "Enhancing Kubernetes Security: RBAC and Pod Security",
-                url: "https://medium.com/@info_37956/enhancing-kubernetes-security-rbac-and-pod-security-1166512dfbf2",
-                category: "security"
-            },
-            {
-                title: "Securing Kubernetes Secrets with a Service Mesh: Best Practices and Tools",
-                url: "https://medium.com/@info_37956/securing-kubernetes-secrets-with-a-service-mesh-best-practices-and-tools-4aa79f9a4d3a",
-                category: "security"
-            },
-            {
-                title: "The GitOps Revolution: Simplifying Continuous Delivery in Kubernetes",
-                url: "https://medium.com/@info_37956/the-gitops-revolution-simplifying-continuous-delivery-in-kubernetes-efb077e1952f",
-                category: "deployment"
-            },
-            {
-                title: "Understanding the CrashLoopBackOff Error in Kubernetes",
-                url: "https://medium.com/@info_37956/understanding-the-crashloopbackoff-error-in-kubernetes-95a80151612d",
-                category: "troubleshooting"
-            },
-            {
-                title: "Secure Kubernetes Persistent Storage with RBAC and Pod Security Standard (PSA)",
-                url: "https://medium.com/@info_37956/secure-kubernetes-persistent-storage-with-rbac-and-pod-security-standards-psa-5f55d297eb79",
-                category: "security"
-            },
-            {
-                title: "How to Set Up Minikube with Docker Driver on Ubuntu CLI: Step-by-Step Guide",
-                url: "https://medium.com/@info_37956/how-to-set-up-minikube-with-docker-driver-on-ubuntu-cli-step-by-step-guide-b4f273e5c63f",
-                category: "deployment"
-            },
-            {
-                title: "Troubleshooting KEDA Cron Autoscaling on Kubernetes: A Deep-Dive Journal",
-                url: "https://medium.com/@info_37956/troubleshooting-keda-cron-autoscaling-on-kubernetes-a-deep-dive-journal-e8907cfef9d1",
-                category: "troubleshooting"
-            },
-            {
-                title: "Kubernetes Autoscaling with KEDA Cron Trigger: A Complete Step-by-Step Guide",
-                url: "https://medium.com/@info_37956/kubernetes-autoscaling-with-keda-cron-trigger-a-complete-step-by-step-guide-8bc3b86011b3",
-                category: "autoscaling"
-            },
-            {
-                title: "Understanding KEDA in Simple Terms: Scaling Kubernetes Workloads the Smart Way",
-                url: "https://medium.com/@info_37956/understanding-keda-in-simple-terms-scaling-kubernetes-workloads-the-smart-way-dcfccd3187a7",
-                category: "autoscaling"
-            },
-            {
-                title: "Service Meshes: Navigating the Cloud-Native Highway with Istio",
-                url: "https://medium.com/@info_37956/service-meshes-navigating-the-cloud-native-highway-with-istio-dfac23cb91c1",
-                category: "service-mesh"
-            },
-            {
-                title: "Kubernetes Pods Explained: Imperative vs Declarative Management with YAML",
-                url: "https://medium.com/@info_37956/kubernetes-pods-explained-imperative-vs-declarative-management-with-yaml-14cc438f4fd2",
-                category: "cka"
-            },
-            {
-                title: "Learning Kubernetes Taints and Tolerations: A Hands-On Journey",
-                url: "https://medium.com/@info_37956/learning-kubernetes-taints-and-tolerations-a-hands-on-journey-b4be69a53698",
-                category: "cka"
-            },
-            {
-                title: "Understanding Kubernetes DaemonSets",
-                url: "https://medium.com/@info_37956/understanding-kubernetes-daemonsets-4bcd1c69f909",
-                category: "cka"
-            },
-            {
-                title: "My Deep Dive into Kubernetes Init Containers: When Order Matters",
-                url: "https://medium.com/@info_37956/my-deep-dive-into-kubernetes-init-containers-when-order-matters-8977d77611bb",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes Namespaces: My Journey from Confusion to Clarity",
-                url: "https://medium.com/@info_37956/kubernetes-namespaces-my-journey-from-confusion-to-clarity-8a721f28582a",
-                category: "cka"
-            },
-            {
-                title: "Understanding Kubernetes Services",
-                url: "https://medium.com/@info_37956/understanding-kubernetes-services-a-developers-journey-5ed91b712c2d",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes Controllers: From ReplicationController to Deployment",
-                url: "https://medium.com/@info_37956/kubernetes-controllers-from-replicationcontroller-to-deployment-65304773af7d",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes Node Affinity: From Theory to Practice",
-                url: "https://medium.com/@info_37956/kubernetes-node-affinity-from-theory-to-practice-059020ecd691",
-                category: "cka"
-            },
-            {
-                title: "Mastering Kubernetes Node Specialization: A Technical Deep-Dive into Taints, Tolerations, and Affinity",
-                url: "https://medium.com/@info_37956/mastering-kubernetes-node-specialization-a-technical-deep-dive-into-taints-tolerations-and-3e59cc66b701",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes Requests and Limits: A Practical Case Study",
-                url: "https://medium.com/@info_37956/kubernetes-requests-and-limits-a-practical-case-study-864ef3f79865",
-                category: "cka"
-            },
-            {
-                title: "Mastering Kubernetes RBAC: Your Complete Guide to Authentication and Authorization",
-                url: "https://medium.com/@info_37956/mastering-kubernetes-rbac-your-complete-guide-to-authentication-and-authorization-79c3633eb48f",
-                category: "security"
-            },
-            {
-                title: "Mastering Kubernetes Authentication: A Practical Guide to Kubeconfig Management",
-                url: "https://medium.com/@info_37956/mastering-kubernetes-authentication-a-practical-guide-to-kubeconfig-management-509be8ad442e",
-                category: "security"
-            },
-            {
-                title: "The Complete Kubernetes Journey: From Pods to Production",
-                url: "https://medium.com/@info_37956/the-complete-kubernetes-journey-from-pods-to-production-3a7d37091256",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes TLS Certificates: Complete Beginner's Guide with Hands-On Examples",
-                url: "https://medium.com/@info_37956/kubernetes-tls-certificates-complete-beginners-guide-with-hands-on-examples-ffc29e7b6530",
-                category: "security"
-            },
-            {
-                title: "Kubernetes ConfigMaps: A Hands-On Learning Journey",
-                url: "https://medium.com/@info_37956/kubernetes-configmaps-a-hands-on-learning-journey-55d325ee86b5",
-                category: "cka"
-            },
-            {
-                title: "Kubernetes Health Probes: A Deep Dive into Liveness and Readiness",
-                url: "https://medium.com/@info_37956/kubernetes-health-probes-a-deep-dive-into-liveness-and-readiness-475ba0f7cc65",
-                category: "cka"
-            },
-            {
-                title: "Understanding EKS Auto Mode and Fargate: A Comparison",
-                url: "https://awstip.com/understanding-eks-auto-mode-and-fargate-a-comparison-e14c3ba868f2",
-                category: "eks"
-            },
-            {
-                title: "Deploying a 2048 Game Application on Amazon EKS with Persistent Storage",
-                url: "https://awstip.com/deploying-a-2048-game-application-on-amazon-eks-with-persistent-storage-0775153cf026",
-                category: "eks"
-            },
-            {
-                title: "Automating AWS EKS Deployment with Terraform and Bash",
-                url: "https://awstip.com/automating-aws-eks-deployment-with-terraform-and-bash-1707032cf314",
-                category: "eks"
-            },
-            {
-                title: "How KEDA HTTP Add-on for Autoscaling HTTP request on Kubernetes works",
-                url: "https://medium.com/@info_37956/how-keda-http-add-on-for-autoscaling-http-request-on-kubernetes-works-08201e0247a5",
-                category: "autoscaling"
-            },
-            {
-                title: "GKE: Autopilot vs. Standard Mode",
-                url: "https://medium.com/@info_37956/gke-autopilot-vs-standard-mode-e8136263072b",
-                category: "architecture"
-            }
-        ];
+    <section class="profile-section">
+      <img src="https://via.placeholder.com/180/667eea/ffffff?text=IC" alt="Ibrahim Cisse" class="profile-image" />
+      <div class="profile-content">
+        <h2>About Me</h2>
+        <p>Technical writer specializing in cloud-native technologies, AWS architecture, and infrastructure automation. I bridge the gap between complex engineering concepts and clear, actionable documentation that developers, DevOps teams, and system administrators can actually use.</p>
+        <p>With 96+ published articles across Medium, AWSTip, and AWS in Plain English, I focus on practical guides, architectural deep-dives, hands-on tutorials, and comprehensive technical analysis spanning Kubernetes, AWS services, Terraform, Linux administration, and modern DevOps practices.</p>
+        <p><strong>Mission:</strong> Making complex cloud-native technologies accessible through clear, practical documentation.</p>
+      </div>
+    </section>
 
-        function getCategoryDisplayName(category) {
-            const categoryNames = {
-                'security': 'Security',
-                'autoscaling': 'Autoscaling',
-                'cka': 'CKA Certification',
-                'eks': 'AWS EKS',
-                'deployment': 'Deployment',
-                'troubleshooting': 'Troubleshooting',
-                'architecture': 'Architecture',
-                'service-mesh': 'Service Mesh'
-            };
-            return categoryNames[category] || category.replace('-', ' ').toUpperCase();
-        }
+    <section class="expertise-section">
+      <h2>Subject Areas</h2>
+      <div class="expertise-tags">
+        <span class="expertise-tag">Kubernetes</span>
+        <span class="expertise-tag">AWS Cloud Architecture</span>
+        <span class="expertise-tag">Terraform/IaC</span>
+        <span class="expertise-tag">Linux System Administration</span>
+        <span class="expertise-tag">Serverless Computing</span>
+        <span class="expertise-tag">DevOps & Automation</span>
+        <span class="expertise-tag">Cloud Security</span>
+        <span class="expertise-tag">API Development</span>
+        <span class="expertise-tag">Network Management</span>
+        <span class="expertise-tag">Multi-Tenant SaaS</span>
+        <span class="expertise-tag">Monitoring & Observability</span>
+        <span class="expertise-tag">Community & Events</span>
+      </div>
+    </section>
 
-        function renderArticles(articlesToRender) {
-            const grid = document.getElementById('articlesGrid');
-            const noResults = document.getElementById('noResults');
-            
-            console.log('Rendering articles:', articlesToRender.length); // Debug log
-            
-            if (articlesToRender.length === 0) {
-                grid.style.display = 'none';
-                noResults.style.display = 'block';
-                return;
-            }
-            
-            grid.style.display = 'grid';
-            noResults.style.display = 'none';
-            
-            grid.innerHTML = articlesToRender.map(article => `
-                <article class="article-card">
-                    <div class="article-category">${getCategoryDisplayName(article.category)}</div>
-                    <h3 class="article-title">${article.title}</h3>
-                    <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-link">
-                        Read Article
-                    </a>
-                </article>
-            `).join('');
-        }
+    <main class="articles-grid" id="articlesGrid">
+      <!-- Monitoring Articles -->
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">End-to-End Monitoring Setup: Prometheus, Grafana, and PagerDuty</h3>
+        <a href="https://medium.com/devops-dev/end-to-end-monitoring-setup-prometheus-grafana-and-pagerduty-0234ba8542ea" target="_blank" class="article-link">Read Article</a>
+      </article>
 
-        function filterArticles() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const categoryFilter = document.getElementById('categoryFilter').value;
-            
-            console.log('Filter by category:', categoryFilter); // Debug log
-            console.log('Search term:', searchTerm); // Debug log
-            
-            const filtered = articles.filter(article => {
-                const matchesSearch = article.title.toLowerCase().includes(searchTerm);
-                const matchesCategory = categoryFilter === 'all' || article.category === categoryFilter;
-                
-                console.log(`Article: ${article.title.substring(0, 30)}..., Category: ${article.category}, Matches: ${matchesCategory}`); // Debug log
-                
-                return matchesSearch && matchesCategory;
-            });
-            
-            console.log('Filtered results:', filtered.length); // Debug log
-            
-            renderArticles(filtered);
-            
-            // Update article count
-            document.getElementById('articleCount').textContent = filtered.length;
-        }
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">A Complete Guide to Prometheus: Monitoring Your Infrastructure Like a Pro</h3>
+        <a href="https://medium.com/@info_37956/a-complete-guide-to-prometheus-monitoring-your-infrastructure-like-a-pro-8684cdadc5a2" target="_blank" class="article-link">Read Article</a>
+      </article>
 
-        // Event listeners
-        document.getElementById('searchInput').addEventListener('input', filterArticles);
-        document.getElementById('categoryFilter').addEventListener('change', filterArticles);
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">Securing and Configuring Node Exporter for Prometheus Monitoring</h3>
+        <a href="https://medium.com/@info_37956/securing-and-configuring-node-exporter-for-prometheus-monitoring-61f1457c425a" target="_blank" class="article-link">Read Article</a>
+      </article>
 
-        // Initial render
-        renderArticles(articles);
-    </script>
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">Understanding Prometheus Metrics: A Comprehensive Guide for SREs and DevOps Engineers</h3>
+        <a href="https://blog.devops.dev/understanding-prometheus-metrics-a-comprehensive-guide-for-sres-and-devops-engineers-6a424211ce71" target="_blank" class="article-link">Read Article</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">Understanding OpenTelemetry, Prometheus, and Grafana: A Complete Guide</h3>
+        <a href="https://medium.com/@info_37956/understanding-opentelemetry-prometheus-and-grafana-a-complete-guide-19cb1b93a8e4" target="_blank" class="article-link">Read Article</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">OpenTelemetry in Action: Understanding the Architecture of a Polygot Application</h3>
+        <a href="https://blog.devops.dev/opentelemetry-in-action-understanding-the-architecture-of-a-polygot-application-c3e32a3bee7c" target="_blank" class="article-link">Read Article</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-category">Monitoring & Observability</div>
+        <h3 class="article-title">OpenTelemetry: Solving Modern Application Monitoring Challenges</h3>
+        <a href="https://medium.com/@info_37956/opentelemetry-solving-modern-application-monitoring-challenges-985eeffd2681" target="_blank" class="article-link">Read Article</a>
+      </article>
+
+      <!-- Community Articles -->
+      <article class="article-card">
+        <div class="article-category">Community & Events</div>
+        <h3 class="article-title">From Zero to CNCF Recognition: How One Cloud Native Meetup Changed My DevOps Career Trajectory</h3>
+        <a href="https://medium.com/@info_37956/from-zero-to-cncf-recognition-how-one-cloud-native-meetup-changed-my-devops-career-trajectory-424ed055d908" target="_blank" class="article-link">Read Article</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-category">Community & Events</div>
+        <h3 class="article-title">Reflections from the AWS User group Malaysia AI/ML Community Event</h3>
+        <a href="https://medium.com/@info_37956/reflections-from-the-aws-ai-ml-community-event-605b2dda425c" target="_blank" class="article-link">Read Article</a>
+      </article>
+    </main>
+  </div>
 </body>
 </html>
-
