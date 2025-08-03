@@ -1,299 +1,858 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ibrahim Cisse - Technical Writer Portfolio</title>
-  <meta name="description" content="Ibrahim Cisse - Technical Writer specializing in Kubernetes, Cloud Security, DevOps, and Cloud-Native technologies. 96+ published articles on Medium and AWSTip.">
-  <meta name="keywords" content="technical writer, kubernetes, devops, cloud security, aws eks, google gke, keda, service mesh, gitops, ibrahim cisse">
-  <meta name="author" content="Ibrahim Cisse">
-  <meta property="og:title" content="Ibrahim Cisse - Technical Writer Portfolio">
-  <meta property="og:description" content="Specialized technical writer with 96+ articles on Kubernetes and Cloud-Native technologies">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Writer & Infrastructure Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-    .header {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .header h1 {
-      font-size: 3rem;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    .typing-text {
-      font-style: italic;
-      color: #666;
-      font-size: 1.2rem;
-      border-right: 2px solid #667eea;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 4s steps(40) infinite;
-    }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid #667eea;
+            object-fit: cover;
+        }
 
-    @keyframes typing {
-      0%, 90%, 100% { width: 0; }
-      30%, 60% { width: 100%; }
-    }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
 
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-    }
+        .header .subtitle {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #667eea;
-    }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
 
-    .stat-label {
-      font-size: 0.9rem;
-      color: #666;
-      text-transform: uppercase;
-    }
+        .stat {
+            text-align: center;
+        }
 
-    .profile-section {
-      display: flex;
-      gap: 40px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      align-items: center;
-    }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
 
-    .profile-image {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      padding: 4px;
-    }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
 
-    .profile-content h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-    .expertise-section {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-    .expertise-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
+        .nav-btn:hover,
+        .nav-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
 
-    .expertise-tag {
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 0.9rem;
-    }
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
 
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      gap: 25px;
-    }
+        .content-section.active {
+            display: block;
+        }
 
-    .article-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .article-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+        .about-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
 
-    .article-category {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-    }
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-    .article-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: transparent;
-      border: 2px solid #667eea;
-      color: #667eea;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
 
-    .article-link:hover {
-      background: #667eea;
-      color: white;
-    }
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-    @media (max-width: 768px) {
-      .profile-section {
-        flex-direction: column;
-        text-align: center;
-      }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .category-btn {
+            background: #f8f9fa;
+            color: #495057;
+            border: 2px solid #e9ecef;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .articles-grid {
+            display: none;
+        }
+
+        .articles-grid.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-title {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #5a6fd8;
+        }
+
+        .article-platform {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .community-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .community-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .community-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 15px;
+            }
+
+            .articles-grid.active {
+                grid-template-columns: 1fr;
+            }
+
+            .category-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+
+            .navigation {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Ibrahim Cisse</h1>
-      <p class="typing-text">"I Write What Engineers Think And What Users Need to Know"</p>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-number">96</div>
-          <div class="stat-label">Articles Published</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">5</div>
-          <div class="stat-label">Platforms</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Topics Covered</div>
-        </div>
-      </div>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1>Technical Writer & Infrastructure Engineer</h1>
+            <p class="subtitle">DevOps • Cloud Infrastructure • Technical Documentation</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">80+</div>
+                    <div class="stat-label">Published Articles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">800+</div>
+                    <div class="stat-label">Monthly Readers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Tech Communities</div>
+                </div>
+            </div>
+        </header>
 
-    <section class="profile-section">
-      <img src="https://via.placeholder.com/180/667eea/ffffff?text=IC" alt="Ibrahim Cisse" class="profile-image" />
-      <div class="profile-content">
-        <h2>About Me</h2>
-        <p>Technical writer specializing in cloud-native technologies, AWS architecture, and infrastructure automation. I bridge the gap between complex engineering concepts and clear, actionable documentation that developers, DevOps teams, and system administrators can actually use.</p>
-        <p>With 96+ published articles across Medium, AWSTip, and AWS in Plain English, I focus on practical guides, architectural deep-dives, hands-on tutorials, and comprehensive technical analysis spanning Kubernetes, AWS services, Terraform, Linux administration, and modern DevOps practices.</p>
-        <p><strong>Mission:</strong> Making complex cloud-native technologies accessible through clear, practical documentation.</p>
-      </div>
-    </section>
+        <nav class="navigation">
+            <button class="nav-btn active" onclick="showSection('about')">About</button>
+            <button class="nav-btn" onclick="showSection('articles')">Technical Articles</button>
+        </nav>
 
-    <section class="expertise-section">
-      <h2>Subject Areas</h2>
-      <div class="expertise-tags">
-        <span class="expertise-tag">Kubernetes</span>
-        <span class="expertise-tag">AWS Cloud Architecture</span>
-        <span class="expertise-tag">Terraform/IaC</span>
-        <span class="expertise-tag">Linux System Administration</span>
-        <span class="expertise-tag">Serverless Computing</span>
-        <span class="expertise-tag">DevOps & Automation</span>
-        <span class="expertise-tag">Cloud Security</span>
-        <span class="expertise-tag">API Development</span>
-        <span class="expertise-tag">Network Management</span>
-        <span class="expertise-tag">Multi-Tenant SaaS</span>
-        <span class="expertise-tag">Monitoring & Observability</span>
-        <span class="expertise-tag">Community & Events</span>
-      </div>
-    </section>
+        <section id="about" class="content-section active">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Results-driven Infrastructure Engineer and Technical Writer with 3+ years of hands-on experience managing distributed systems, cloud infrastructure, and automation. Currently working as a System Support Engineer for a US-based fintech company, where I maintain 20+ globally distributed trading servers on AWS within SOC2-compliant frameworks.</p>
+                
+                <p>I'm passionate about bridging the gap between complex technical concepts and accessible documentation. Through my 80+ published articles on Medium, Dev.to, and AWS Tip, I help over 800 monthly readers understand DevOps, cloud-native technologies, and infrastructure engineering.</p>
 
-    <main class="articles-grid" id="articlesGrid">
-      <!-- Monitoring Articles -->
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">End-to-End Monitoring Setup: Prometheus, Grafana, and PagerDuty</h3>
-        <a href="https://medium.com/devops-dev/end-to-end-monitoring-setup-prometheus-grafana-and-pagerduty-0234ba8542ea" target="_blank" class="article-link">Read Article</a>
-      </article>
+                <div class="skills">
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Monitoring & Observability</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Site Reliability Engineering</span>
+                    <span class="skill-tag">Technical Writing</span>
+                </div>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">A Complete Guide to Prometheus: Monitoring Your Infrastructure Like a Pro</h3>
-        <a href="https://medium.com/@info_37956/a-complete-guide-to-prometheus-monitoring-your-infrastructure-like-a-pro-8684cdadc5a2" target="_blank" class="article-link">Read Article</a>
-      </article>
+                <h3 style="color: #2c3e50; margin-top: 30px; margin-bottom: 15px;">Key Achievements</h3>
+                <p>• Reduced MTTR by 30% through comprehensive documentation and runbooks</p>
+                <p>• Designed SRE framework resulting in 40% reduction in recurring incidents</p>
+                <p>• Implemented AI-powered knowledge base reducing escalation load by 25%</p>
+                <p>• Built custom tooling that reduced server load by 80%</p>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">Securing and Configuring Node Exporter for Prometheus Monitoring</h3>
-        <a href="https://medium.com/@info_37956/securing-and-configuring-node-exporter-for-prometheus-monitoring-61f1457c425a" target="_blank" class="article-link">Read Article</a>
-      </article>
+                <div class="community-section">
+                    <h3>Community Involvement</h3>
+                    <p>Active contributor to the DevOps and cloud-native community through speaking engagements and participation in local meetups.</p>
+                    <div class="community-grid">
+                        <div class="community-item">
+                            <strong>CNCF Kuala Lumpur</strong>
+                            <p>Cloud Native Computing Foundation chapter member and contributor</p>
+                        </div>
+                        <div class="community-item">
+                            <strong>AWS User Group Malaysia</strong>
+                            <p>Regular attendee and technical contributor</p>
+                        </div>
+                        <div class="community-item">
+                            <strong>Google Developer Group KL</strong>
+                            <p>Active participant in developer meetups and events</p>
+                        </div>
+                        <div class="community-item">
+                            <strong>Swift Malaysia</strong>
+                            <p>iOS development community engagement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">Understanding Prometheus Metrics: A Comprehensive Guide for SREs and DevOps Engineers</h3>
-        <a href="https://blog.devops.dev/understanding-prometheus-metrics-a-comprehensive-guide-for-sres-and-devops-engineers-6a424211ce71" target="_blank" class="article-link">Read Article</a>
-      </article>
+        <section id="articles" class="content-section">
+            <div class="category-tabs">
+                <button class="category-btn active" onclick="showCategory('kubernetes')">Kubernetes (35)</button>
+                <button class="category-btn" onclick="showCategory('aws')">AWS (14)</button>
+                <button class="category-btn" onclick="showCategory('iac')">Infrastructure as Code (8)</button>
+                <button class="category-btn" onclick="showCategory('linux')">Linux (13)</button>
+                <button class="category-btn" onclick="showCategory('monitoring')">Monitoring & Observability (7)</button>
+                <button class="category-btn" onclick="showCategory('community')">Community (2)</button>
+            </div>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">Understanding OpenTelemetry, Prometheus, and Grafana: A Complete Guide</h3>
-        <a href="https://medium.com/@info_37956/understanding-opentelemetry-prometheus-and-grafana-a-complete-guide-19cb1b93a8e4" target="_blank" class="article-link">Read Article</a>
-      </article>
+            <div id="kubernetes" class="articles-grid active">
+                <div class="article-card">
+                    <div class="article-title">Comprehensive Guide: Deploying a Web App on Minikube with Port Forwarding and Ingress</div>
+                    <a href="https://medium.com/@info_37956/comprehensive-guide-deploying-a-web-app-on-minikube-with-port-forwarding-and-ingress-0d9361a27dc2" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Minikube: Setting Up Metrics Server, RBAC, and Kubectl Context</div>
+                    <a href="https://medium.com/@info_37956/minikube-setting-up-metrics-server-rbac-and-kubectl-context-2ea89ec6d07f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Architecture: A Brief Walkthrough</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-architecture-a-brief-walkthrough-1c95ce4975a7" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Setting Up and Troubleshooting HPA and VPA in Kubernetes</div>
+                    <a href="https://medium.com/@info_37956/setting-up-and-troubleshooting-hpa-and-vpa-in-kubernetes-593aac3ddb9f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">10 Things to Consider Before Choosing an Ingress Controller for Kubernetes</div>
+                    <a href="https://medium.com/@info_37956/10-things-to-consider-before-choosing-an-ingress-controller-for-kubernetes-74ff08a64369" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Journey of an Application through Kubernetes</div>
+                    <a href="https://medium.com/@info_37956/journey-of-an-application-through-kubernetes-f1cab19ce8a5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">In-Depth Comparative Analysis: Horizontal Pod Autoscaler (HPA) vs. Kubernetes Event-driven Autoscaler (KEDA)</div>
+                    <a href="https://medium.com/@info_37956/in-depth-comparative-analysis-horizontal-pod-autoscaler-hpa-vs-d59c1ed5f5d6" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">My Journey to Implementing KEDA and Auto-Scaling in Kubernetes</div>
+                    <a href="https://awstip.com/my-journey-to-implementing-keda-and-auto-scaling-in-kubernetes-aa137efb5af5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Securing Kubernetes: A Practical Guide to Network Policies</div>
+                    <a href="https://medium.com/@info_37956/securing-kubernetes-a-practical-guide-to-network-policies-5bf9f547bf42" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Enhancing Kubernetes Security: RBAC and Pod Security</div>
+                    <a href="https://medium.com/@info_37956/enhancing-kubernetes-security-rbac-and-pod-security-1166512dfbf2" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Securing Kubernetes Secrets with a Service Mesh: Best Practices and Tools</div>
+                    <a href="https://medium.com/@info_37956/securing-kubernetes-secrets-with-a-service-mesh-best-practices-and-tools-4aa79f9a4d3a" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">The GitOps Revolution: Simplifying Continuous Delivery in Kubernetes</div>
+                    <a href="https://medium.com/@info_37956/the-gitops-revolution-simplifying-continuous-delivery-in-kubernetes-efb077e1952f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding the CrashLoopBackOff Error in Kubernetes</div>
+                    <a href="https://medium.com/@info_37956/understanding-the-crashloopbackoff-error-in-kubernetes-95a80151612d" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Secure Kubernetes Persistent Storage with RBAC and Pod Security Standard (PSA)</div>
+                    <a href="https://medium.com/@info_37956/secure-kubernetes-persistent-storage-with-rbac-and-pod-security-standards-psa-5f55d297eb79" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">How to Set Up Minikube with Docker Driver on Ubuntu CLI: Step-by-Step Guide</div>
+                    <a href="https://medium.com/@info_37956/how-to-set-up-minikube-with-docker-driver-on-ubuntu-cli-step-by-step-guide-b4f273e5c63f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Troubleshooting KEDA Cron Autoscaling on Kubernetes: A Deep-Dive Journal</div>
+                    <a href="https://medium.com/@info_37956/troubleshooting-keda-cron-autoscaling-on-kubernetes-a-deep-dive-journal-e8907cfef9d1" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Autoscaling with KEDA Cron Trigger: A Complete Step-by-Step Guide</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-autoscaling-with-keda-cron-trigger-a-complete-step-by-step-guide-8bc3b86011b3" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding KEDA in Simple Terms: Scaling Kubernetes Workloads the Smart Way</div>
+                    <a href="https://medium.com/@info_37956/understanding-keda-in-simple-terms-scaling-kubernetes-workloads-the-smart-way-dcfccd3187a7" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Service Meshes: Navigating the Cloud-Native Highway with Istio</div>
+                    <a href="https://medium.com/@info_37956/service-meshes-navigating-the-cloud-native-highway-with-istio-dfac23cb91c1" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Pods Explained: Imperative vs Declarative Management with YAML</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-pods-explained-imperative-vs-declarative-management-with-yaml-14cc438f4fd2" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Learning Kubernetes Taints and Tolerations: A Hands-On Journey</div>
+                    <a href="https://medium.com/@info_37956/learning-kubernetes-taints-and-tolerations-a-hands-on-journey-b4be69a53698" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding Kubernetes DaemonSets</div>
+                    <a href="https://medium.com/@info_37956/understanding-kubernetes-daemonsets-4bcd1c69f909" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">My Deep Dive into Kubernetes Init Containers: When Order Matters</div>
+                    <a href="https://medium.com/@info_37956/my-deep-dive-into-kubernetes-init-containers-when-order-matters-8977d77611bb" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Namespaces: My Journey from Confusion to Clarity</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-namespaces-my-journey-from-confusion-to-clarity-8a721f28582a" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding Kubernetes Services</div>
+                    <a href="https://medium.com/@info_37956/understanding-kubernetes-services-a-developers-journey-5ed91b712c2d" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Controllers: From ReplicationController to Deployment</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-controllers-from-replicationcontroller-to-deployment-65304773af7d" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Node Affinity: From Theory to Practice</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-node-affinity-from-theory-to-practice-059020ecd691" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Mastering Kubernetes Node Specialization: A Technical Deep-Dive into Taints, Tolerations, and Affinity</div>
+                    <a href="https://medium.com/@info_37956/mastering-kubernetes-node-specialization-a-technical-deep-dive-into-taints-tolerations-and-3e59cc66b701" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Requests and Limits: A Practical Case Study</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-requests-and-limits-a-practical-case-study-864ef3f79865" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Mastering Kubernetes RBAC: Your Complete Guide to Authentication and Authorization</div>
+                    <a href="https://medium.com/@info_37956/mastering-kubernetes-rbac-your-complete-guide-to-authentication-and-authorization-79c3633eb48f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Mastering Kubernetes Authentication: A Practical Guide to Kubeconfig Management</div>
+                    <a href="https://medium.com/@info_37956/mastering-kubernetes-authentication-a-practical-guide-to-kubeconfig-management-509be8ad442e" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">The Complete Kubernetes Journey: From Pods to Production</div>
+                    <a href="https://medium.com/@info_37956/the-complete-kubernetes-journey-from-pods-to-production-3a7d37091256" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes TLS Certificates: Complete Beginner's Guide with Hands-On Examples</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-tls-certificates-complete-beginners-guide-with-hands-on-examples-ffc29e7b6530" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes ConfigMaps: A Hands-On Learning Journey</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-configmaps-a-hands-on-learning-journey-55d325ee86b5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Kubernetes Health Probes: A Deep Dive into Liveness and Readiness</div>
+                    <a href="https://medium.com/@info_37956/kubernetes-health-probes-a-deep-dive-into-liveness-and-readiness-475ba0f7cc65" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">OpenTelemetry in Action: Understanding the Architecture of a Polygot Application</h3>
-        <a href="https://blog.devops.dev/opentelemetry-in-action-understanding-the-architecture-of-a-polygot-application-c3e32a3bee7c" target="_blank" class="article-link">Read Article</a>
-      </article>
+            <div id="aws" class="articles-grid">
+                <div class="article-card">
+                    <div class="article-title">Understanding EKS Auto Mode and Fargate: A Comparison</div>
+                    <a href="https://awstip.com/understanding-eks-auto-mode-and-fargate-a-comparison-e14c3ba868f2" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Deploying a 2048 Game Application on Amazon EKS with Persistent Storage</div>
+                    <a href="https://awstip.com/deploying-a-2048-game-application-on-amazon-eks-with-persistent-storage-0775153cf026" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Automating AWS EKS Deployment with Terraform and Bash</div>
+                    <a href="https://awstip.com/automating-aws-eks-deployment-with-terraform-and-bash-1707032cf314" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">How KEDA HTTP Add-on for Autoscaling HTTP request on Kubernetes works</div>
+                    <a href="https://medium.com/@info_37956/how-keda-http-add-on-for-autoscaling-http-request-on-kubernetes-works-08201e0247a5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">GKE: Autopilot vs. Standard Mode</div>
+                    <a href="https://medium.com/@info_37956/gke-autopilot-vs-standard-mode-e8136263072b" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Introducing Nomad AI Concierge: Your AI-Powered Travel Planner & Visa Advisor on AWS Party Rock</div>
+                    <a href="https://medium.com/aws-in-plain-english/introducing-nomad-ai-concierge-your-ai-powered-travel-planner-visa-advisor-on-aws-party-rock-cb4c000230ec" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Plain English</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Testing AI-Powered Property Management: From Payment Analysis to Tenant Risk Evaluation</div>
+                    <a href="https://medium.com/aws-in-plain-english/testing-ai-powered-property-management-from-payment-analysis-to-tenant-risk-evaluation-with-a-0e09c8873cd8" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Plain English</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Building a Serverless Multi-Tenant SaaS Application: A Complete Guide Part 1</div>
+                    <a href="https://medium.com/aws-in-plain-english/building-a-serverless-multi-tenant-saas-application-a-complete-guide-part-1-35f08da4051b" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Plain English</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">The Complete API Masterclass: From Fundamentals to AWS API Gateway</div>
+                    <a href="https://medium.com/aws-tip/the-complete-api-masterclass-from-fundamentals-to-aws-api-gateway-34667d0a7b78" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Supercharge Your AWS Development: How to Access AWS Console Features Directly from VS Code</div>
+                    <a href="https://aws.plainenglish.io/supercharge-your-aws-development-how-to-access-aws-console-features-directly-from-vs-code-cec0e8379802" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Plain English</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Designing a Global, Scalable HIPAA-Compliant Healthcare App on AWS</div>
+                    <a href="https://awstip.com/designing-a-global-scalable-hipaa-compliant-healthcare-app-on-aws-2cb766a1f192" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">AWS Tip</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Using Lambda Functions in S3 Programmatically</div>
+                    <a href="https://medium.com/@info_37956/using-lambda-functions-in-s3-programmatically-82ca76dc11cb" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Implementing a Scalable Web Architecture for a Fictional Company on AWS</div>
+                    <a href="https://medium.com/@info_37956/implementing-a-scalable-web-architecture-for-a-fictional-company-on-aws-536d8eb895e3" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Simplifying Static Web Hosting with Amazon S3: A Hands-On Guide</div>
+                    <a href="https://medium.com/@info_37956/simplifying-static-web-hosting-with-amazon-s3-a-hands-on-guide-fbd873b6acdd" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
 
-      <article class="article-card">
-        <div class="article-category">Monitoring & Observability</div>
-        <h3 class="article-title">OpenTelemetry: Solving Modern Application Monitoring Challenges</h3>
-        <a href="https://medium.com/@info_37956/opentelemetry-solving-modern-application-monitoring-challenges-985eeffd2681" target="_blank" class="article-link">Read Article</a>
-      </article>
+            <div id="iac" class="articles-grid">
+                <div class="article-card">
+                    <div class="article-title">How to Simulate AWS Networking with Terraform and LocalStack</div>
+                    <a href="https://medium.com/@info_37956/how-to-simulate-aws-networking-with-terraform-and-localstack-39fbc46c3678" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Terraform: A Comprehensive Guide to Essential Components</div>
+                    <a href="https://medium.com/@info_37956/terraform-a-comprehensive-guide-to-essential-components-3a14898fa795" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Streamlining Terraform Workflows: Best Practices for State Management and Automation</div>
+                    <a href="https://medium.com/@info_37956/streamlining-terraform-workflows-best-practices-for-state-management-and-automation-169a0796867b" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding Terraform: A Practical Workflow Guide</div>
+                    <a href="https://medium.com/@info_37956/understanding-terraform-a-practical-workflow-guide-e57f836a5fb1" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Complete Setup Guide for LocalStack with Terraform</div>
+                    <a href="https://medium.com/@info_37956/complete-setup-guide-for-localstack-with-terraform-4fbe7de5488f" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Terraform State</div>
+                    <a href="https://medium.com/@info_37956/terraform-state-0d5ee9fe01b4" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Terraform Essentials: The Building Blocks of Infrastructure Orchestration</div>
+                    <a href="https://medium.com/@info_37956/terraform-essentials-the-building-blocks-of-infrastructure-orchestration-b6cb787227d0" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Everything as Code: A Comprehensive Guide to Modern DevOps</div>
+                    <a href="https://medium.com/@info_37956/everything-as-code-a-comprehensive-guide-to-modern-devops-3da66688b517" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
 
-      <!-- Community Articles -->
-      <article class="article-card">
-        <div class="article-category">Community & Events</div>
-        <h3 class="article-title">From Zero to CNCF Recognition: How One Cloud Native Meetup Changed My DevOps Career Trajectory</h3>
-        <a href="https://medium.com/@info_37956/from-zero-to-cncf-recognition-how-one-cloud-native-meetup-changed-my-devops-career-trajectory-424ed055d908" target="_blank" class="article-link">Read Article</a>
-      </article>
+            <div id="linux" class="articles-grid">
+                <div class="article-card">
+                    <div class="article-title">Firewall: Network Traffic Management</div>
+                    <a href="https://medium.com/@info_37956/firewall-traffic-management-e0616bc0b344" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">A Comprehensive Guide to Configuring Firewall Rules on CentOS</div>
+                    <a href="https://medium.com/@info_37956/a-comprehensive-guide-to-configuring-firewall-rules-on-centos-92b25138e9b5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Comprehensive Linux Kernel Guide: Architecture, Boot Process & System Administration</div>
+                    <a href="https://medium.com/@info_37956/comprehensive-linux-kernel-guide-architecture-boot-process-system-administration-73187091c956" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">How I Set Up a Kubernetes Home Lab on Ubuntu WSL: Preparing for Advanced Monitoring and Observability</div>
+                    <a href="https://medium.com/@info_37956/how-i-set-up-a-kubernetes-home-lab-on-ubuntu-wsl-53b8866121e9" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Vim Cheat Sheet for CKA (Ubuntu 24.04)</div>
+                    <a href="https://medium.com/@info_37956/vim-cheat-sheet-for-cka-ubuntu-24-04-d32428f920a5" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Setting Up Python 3.7 Development Environment on CentOS 7 Server</div>
+                    <a href="https://medium.com/@info_37956/setting-up-python-3-7-development-environment-on-centos-7-server-c488807049bd" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Managing Users and Groups in Linux: A Step-by-Step Guide</div>
+                    <a href="https://medium.com/@info_37956/managing-users-and-groups-in-linux-a-step-by-step-guide-869e229fb705" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Different Roles for Users and Permissions in Linux: A Step-by-Step Guide</div>
+                    <a href="https://medium.com/@info_37956/managing-users-and-permissions-in-linux-a-step-by-step-guide-0c7f620a9b69" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Implementing Network Time Protocol (NTP): A Comprehensive Technical Guide</div>
+                    <a href="https://medium.com/@info_37956/implementing-network-time-protocol-ntp-a-comprehensive-technical-guide-18015c3a1280" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Implementing Static IP Configuration Using nmcli on Linux</div>
+                    <a href="https://medium.com/@info_37956/implementing-static-ip-configuration-using-nmcli-on-linux-767fb8c9f8b0" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Implementing Network Teaming on a Linux Server</div>
+                    <a href="https://medium.com/@info_37956/implementing-network-teaming-on-a-linux-server-56f30c18646a" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Configuring DNS for Local Testing: A Technical Guide</div>
+                    <a href="https://medium.com/@info_37956/configuring-dns-for-local-testing-a-technical-guide-48d3758925a8" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">DNS: Name Server Hands-on Lab</div>
+                    <a href="https://medium.com/@info_37956/dns-name-server-hands-on-lab-ac23497af84a" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
 
-      <article class="article-card">
-        <div class="article-category">Community & Events</div>
-        <h3 class="article-title">Reflections from the AWS User group Malaysia AI/ML Community Event</h3>
-        <a href="https://medium.com/@info_37956/reflections-from-the-aws-ai-ml-community-event-605b2dda425c" target="_blank" class="article-link">Read Article</a>
-      </article>
-    </main>
-  </div>
+            <div id="monitoring" class="articles-grid">
+                <div class="article-card">
+                    <div class="article-title">End-to-End Monitoring Setup: Prometheus, Grafana, and PagerDuty</div>
+                    <a href="https://medium.com/devops-dev/end-to-end-monitoring-setup-prometheus-grafana-and-pagerduty-0234ba8542ea" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">DevOps.dev</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">A Complete Guide to Prometheus: Monitoring Your Infrastructure Like a Pro</div>
+                    <a href="https://medium.com/@info_37956/a-complete-guide-to-prometheus-monitoring-your-infrastructure-like-a-pro-8684cdadc5a2" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Securing and Configuring Node Exporter for Prometheus Monitoring</div>
+                    <a href="https://medium.com/@info_37956/securing-and-configuring-node-exporter-for-prometheus-monitoring-61f1457c425a" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding Prometheus Metrics: A Comprehensive Guide for SREs and DevOps Engineers</div>
+                    <a href="https://blog.devops.dev/understanding-prometheus-metrics-a-comprehensive-guide-for-sres-and-devops-engineers-6a424211ce71" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">DevOps.dev</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Understanding OpenTelemetry, Prometheus, and Grafana: A Complete Guide</div>
+                    <a href="https://medium.com/@info_37956/understanding-opentelemetry-prometheus-and-grafana-a-complete-guide-19cb1b93a8e4" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">OpenTelemetry in Action: Understanding the Architecture of a Polygot Application</div>
+                    <a href="https://blog.devops.dev/opentelemetry-in-action-understanding-the-architecture-of-a-polygot-application-c3e32a3bee7c" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">DevOps.dev</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">OpenTelemetry: Solving Modern Application Monitoring Challenges</div>
+                    <a href="https://medium.com/@info_37956/opentelemetry-solving-modern-application-monitoring-challenges-985eeffd2681" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
+
+            <div id="community" class="articles-grid">
+                <div class="article-card">
+                    <div class="article-title">From Zero to CNCF Recognition: How One Cloud Native Meetup Changed My DevOps Career Trajectory</div>
+                    <a href="https://medium.com/@info_37956/from-zero-to-cncf-recognition-how-one-cloud-native-meetup-changed-my-devops-career-trajectory-424ed055d908" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+                <div class="article-card">
+                    <div class="article-title">Reflections from the AWS User Group Malaysia AI/ML Community Event</div>
+                    <a href="https://medium.com/@info_37956/reflections-from-the-aws-ai-ml-community-event-605b2dda425c" target="_blank" class="article-link">Read Article →</a>
+                    <span class="article-platform">Medium</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Technical Writer & Infrastructure Engineer Portfolio. Built for GitHub Pages.</p>
+            <p>Connect with me on <a href="https://medium.com/@info_37956" target="_blank" style="color: #fff; text-decoration: underline;">Medium</a> | Available for technical writing opportunities</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all nav buttons
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.add('active');
+            
+            // Activate corresponding nav button
+            event.target.classList.add('active');
+        }
+
+        function showCategory(categoryName) {
+            // Hide all article grids
+            const grids = document.querySelectorAll('.articles-grid');
+            grids.forEach(grid => grid.classList.remove('active'));
+            
+            // Remove active class from all category buttons
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected category
+            document.getElementById(categoryName).classList.add('active');
+            
+            // Activate corresponding category button
+            event.target.classList.add('active');
+        }
+
+        // Initialize with first category shown
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('kubernetes').classList.add('active');
+        });
+    </script>
 </body>
 </html>
